@@ -3,26 +3,31 @@
 <head>
 	<title>Result</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|VT323" rel="stylesheet">
 <style type="text/css">
 	body{
-		font-size: 20px;
+		font-size: 15px;
+		font-family: 'VT323', monospace;
+		background: black;
+		font-weight: bold;
 	}
 	p{
 		display: inline-block;
 		margin: 0;
 		padding: 0;
 	}
+	.wrapper{
+		text-align: center;
+	}
 </style>
 <body>
-{% for ele in image %}
-	{% for pixel in ele %}
-		{% if pixel == '.' or pixel==',' %}
-			<p>{{pixel}}</p><span></span>
-		{% else %}
-			<p>{{pixel}}</p>
-		{% endif %}	
-	{% endfor %}
-	<br>
-{% endfor %}
+	<div class="wrapper">
+		{% for ele in image %}
+			{% for pixel in ele %}		
+				<p style="color:green;">{{pixel[0]}}</p>
+			{% endfor %}
+			<br>
+		{% endfor %}
+	</div>
 </body>
 </html>

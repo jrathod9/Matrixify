@@ -3,9 +3,32 @@
 <head>
 	<title>Symbolizer</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|VT323" rel="stylesheet">
+<style type="text/css">
+	body{
+		background: black;
+		font-family: 'VT323', monospace;
+		color: green;
+	}
+	h1{
+		font-size: 50px;
+	}
+	form{
+		display: block;
+	}
+	input{
+		font-family: 'VT323', monospace;
+		background-color: white;
+		border-radius: 5px;
+		font-size: 20px;
+		margin: 2%;
+	}
+</style>
 <body>
+	<h1>Welcome to the Matrix</h1>
+
 	<form action="{{url_for('result')}}" method="POST">
-		<label for="file">Upload Image: </label><input type="file" name="file">
+		<input type="file" name="file"><br>
 		<input type="submit" name="submit">
 	</form>
 </body>
