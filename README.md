@@ -15,13 +15,17 @@ Replaces image pixels with symbols to redraw the picture.
 
 ## Screenshots
 - Input : 
+
 ![Ghostinput](static/ghost.png?raw=true "Ghostinput")
 
 - Output:
+
 ![Ghostoutput](screenshots/ghost_res.png?raw=true "Ghostoutput")
 
 - Input:
+
 ![Owlinput](static/owl.png?raw=true "Owlinput")
 
 - Output:
+
 ![Owloutput](screenshots/owl_res.png?raw=true "Owloutput")
