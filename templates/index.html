@@ -9,8 +9,8 @@
 <body style="text-align: center;">
 	<h1>Matrixify</h1>
 
-	<p style="color: red">(Move the image to the /static folder and upload)</p>
-	<form action="{{url_for('result')}}" method="POST">
+	<p style="color: red">(Upload only image files and keep the filename short)</p>
+	<form action="{{url_for('result')}}" method="POST" enctype="multipart/form-data">
 		<input type="file" name="file" value=""><br>
 		<input type="submit" name="submit">
 	</form>
