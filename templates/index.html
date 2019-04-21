@@ -4,11 +4,13 @@
 	<title>Symbolizer</title>
 </head>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|VT323" rel="stylesheet">
-<style type="text/css">
+<link rel="stylesheet" type="text/css" href="static/main.css">
+<!-- <style type="text/css">
 	body{
 		background: black;
 		font-family: 'VT323', monospace;
 		color: green;
+		text-align: center;
 	}
 	h1{
 		font-size: 50px;
@@ -23,13 +25,21 @@
 		font-size: 20px;
 		margin: 2%;
 	}
-</style>
-<body>
-	<h1>Welcome to the Matrix</h1>
+	p{
+		font-size:20px;
+	}
+</style> -->
+<body style="text-align: center;">
+	<h1>Welcome to the Matrix Convertor</h1>
 
+	<p>(Move the image to the main folder and upload)</p>
 	<form action="{{url_for('result')}}" method="POST">
-		<input type="file" name="file"><br>
+		<input type="file" name="file" value=""><br>
 		<input type="submit" name="submit">
 	</form>
+	<p>| Recommended : PNG Images |</p>
+	<footer>
+		<p>Star <a href="https://github.com/jrathod9/Matrixify">this repo</a></p>
+	</footer>
 </body>
 </html>

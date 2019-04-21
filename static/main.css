@@ -1,0 +1,29 @@
+body{
+		font-size: 15px;
+		font-family: 'VT323', monospace;
+		background: black;
+		font-weight: bold;
+		color: green;
+	}
+	p{
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+	}
+	h1{
+		font-size: 50px;
+	}
+	.wrapper{
+		text-align: center;
+	}
+	form{
+		display: block;
+	}
+	input{
+		font-family: 'VT323', monospace;
+		background-color: white;
+		border-radius: 5px;
+		font-size: 20px;
+		margin: 2%;
+	}

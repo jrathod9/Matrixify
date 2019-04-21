@@ -3,31 +3,47 @@
 <head>
 	<title>Result</title>
 </head>
+
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|VT323" rel="stylesheet">
-<style type="text/css">
+<link rel="stylesheet" type="text/css" href="static/main.css">
+<!-- <style type="text/css">
 	body{
 		font-size: 15px;
 		font-family: 'VT323', monospace;
 		background: black;
 		font-weight: bold;
+		color: green;
 	}
 	p{
 		display: inline-block;
 		margin: 0;
 		padding: 0;
+		font-size: 20px;
+	}
+	h1{
+		font-size: 50px;
 	}
 	.wrapper{
 		text-align: center;
 	}
-</style>
+</style> -->
 <body>
 	<div class="wrapper">
+		<h1>Result</h1>
+		{% if image %}
 		{% for ele in image %}
 			{% for pixel in ele %}		
-				<p style="color:green;">{{pixel[0]}}</p>
+				<p style="font-size: 15px;">{{pixel[0]}}</p>
 			{% endfor %}
 			<br>
 		{% endfor %}
+		<h2>Find it on your terminal too...</h2>
+		<footer>
+			<p>Star <a href="https://github.com/jrathod9/Matrixify">this repo</a></p>
+		</footer>
+		{% else %}
+		<h1>Please upload a valid image!</h1>
+		{% endif %}
 	</div>
 </body>
 </html>

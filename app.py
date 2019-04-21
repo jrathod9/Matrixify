@@ -4,10 +4,8 @@ from PIL import Image
 
 app.config['SECRET_KEY']='151de16d04dacf29c88db46b69194afb'
 
-# SYMBOLS = ['.',',',':',';','+','*','?','%','S','#','@']
 SYMBOLS = ['.',',',':',';','1','2','3','4','5','6','@']
 resize_width = 50
-# SYMBOLS = SYMBOLS[::-1]
 
 def resize(image):
     (curr_w, curr_h) = image.size
@@ -34,23 +32,31 @@ def home():
 def result():
 	if request.method == 'POST':
 		image = request.form["file"]
-		im = Image.open(image,'r')
-		im = resize(im)
-		clr=[]
-		im_list = list(im.getdata())
-		for ele in im_list:
-			clr.append(ele)
-		im = im.convert('L')
-		im = symbolizer(im)
+		if image :
+			name_file = image.split(".")
+			name_file = name_file[1]
+		file_types = ['png','jpg','jpeg','gif','bmp','tiff']
+		if image and name_file in file_types:
+			image = 'static/' + image
+			im = Image.open(image,'r')
+			im = resize(im)
+			clr=[]
+			im_list = list(im.getdata())
+			for ele in im_list:
+				clr.append(ele)
+			im = im.convert('L')
+			im = symbolizer(im)
 
-		count = 0
-		length = len(im)
-		new_image = [im[index:index+resize_width] for index in range(0, length, resize_width)]
-		for ele in new_image:
-			for pixel in ele:
-				pixel = [pixel,clr[0],clr[1],clr[2],clr[3]]
-				print(pixel[0],end="")
-			print("")
+			count = 0
+			length = len(im)
+			new_image = [im[index:index+resize_width] for index in range(0, length, resize_width)]
+			for ele in new_image:
+				for pixel in ele:
+					pixel = [pixel,clr[0],clr[1],clr[2],clr[3]]
+					print(pixel[0],end="")
+				print("")
+		else:
+			new_image = []
 	return render_template('result.html',image = new_image)
 
 if __name__ == '__main__':
