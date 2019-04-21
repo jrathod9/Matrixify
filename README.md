@@ -12,6 +12,8 @@ Replaces image pixels with symbols to redraw the picture.
  -  Browse it on `localhost:5000`
  
 <b>IMPORTANT:</b> Recommended to upload PNG images
+<i>There are some preloaded images in the <b>/static</b> folder</i><br>
+<i>You can also vary the output image width by varying the <b>resize_width</b> variable in <b>app.py</b></i>
 
 ## Screenshots
 - Input : 
