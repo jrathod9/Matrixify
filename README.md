@@ -11,7 +11,7 @@ Replaces image pixels with symbols to redraw the picture.
  - `python3 app.py`
  -  Browse it on `localhost:5000`
  
-<b>IMPORTANT:</b> Insert the image into the /images folder beforehand.
+<b>IMPORTANT:</b> Recommended to upload PNG images
 
 ## Screenshots
 - Input : 
