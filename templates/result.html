@@ -3,10 +3,24 @@
 <head>
 	<title>Result</title>
 </head>
+<style type="text/css">
+	body{
+		font-size: 20px;
+	}
+	p{
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+</style>
 <body>
 {% for ele in image %}
 	{% for pixel in ele %}
-		<span>{{pixel}}</span>
+		{% if pixel == '.' or pixel==',' %}
+			<p>{{pixel}}</p><span></span>
+		{% else %}
+			<p>{{pixel}}</p>
+		{% endif %}	
 	{% endfor %}
 	<br>
 {% endfor %}

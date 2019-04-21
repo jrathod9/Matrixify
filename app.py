@@ -4,9 +4,11 @@ from PIL import Image
 
 app.config['SECRET_KEY']='151de16d04dacf29c88db46b69194afb'
 
-SYMBOLS = ['.',',',':',';','+','*','?','%','5','#','@']
+SYMBOLS = ['.',',',':',';','+','*','?','%','S','#','@']
+resize_width = 100
+# SYMBOLS = SYMBOLS[::-1]
 
-def resize(image, resize_width=100):
+def resize(image):
     (curr_w, curr_h) = image.size
     new_h = int(float(curr_h)/float(curr_w) * resize_width)		#aspect ratio * width
     dimensions = (resize_width, new_h)
@@ -37,8 +39,11 @@ def result():
 		im = symbolizer(im)
 
 		length = len(im)
-		new_image = [im[index:index+100] for index in range(0, length, 100)]
-
+		new_image = [im[index:index+resize_width] for index in range(0, length, resize_width)]
+		for ele in new_image:
+			for pixel in ele:
+				print(pixel,end="")
+			print("")
 	return render_template('result.html',image = new_image)
 
 if __name__ == '__main__':
