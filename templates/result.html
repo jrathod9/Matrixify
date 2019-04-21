@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+</head>
+<body>
+{% for ele in image %}
+	{% for pixel in ele %}
+		<span>{{pixel}}</span>
+	{% endfor %}
+	<br>
+{% endfor %}
+</body>
+</html>
