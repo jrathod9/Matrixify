@@ -1,6 +1,6 @@
 from flask import Flask, render_template , url_for ,flash, redirect, request
 import os
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 from PIL import Image
